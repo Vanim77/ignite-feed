@@ -41,7 +41,7 @@ export function Post({ author, content, publishedAt }) {
 
         <div className={styles.content}>
           {content.map((item, key) =>
-            item.type === 'paragraph' ? <p key={key}>{item.content}</p> : <a key={key} href="#">{item.content}</a>
+            item.type === 'paragraph' ? <p key={key}>{item.content}</p> : <p><a key={key} href="#">{item.content}</a></p>
           )}
         </div>
 
