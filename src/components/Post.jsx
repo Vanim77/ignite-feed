@@ -56,8 +56,8 @@ export function Post({ author, content, publishedAt }) {
         </header>
 
         <div className={styles.content}>
-          {content.map((item, key) =>
-            item.type === 'paragraph' ? <p key={key}>{item.content}</p> : <p><a key={key} href="#">{item.content}</a></p>
+          {content.map(item =>
+            item.type === 'paragraph' ? <p key={item.content}>{item.content}</p> : <p key={key}><a href="#">{item.content}</a></p>
           )}
         </div>
 
@@ -74,7 +74,7 @@ export function Post({ author, content, publishedAt }) {
         </form>
 
         <div className={styles.commentList}>
-          {comments.map(comment => <Comment content={comment} />)}
+          {comments.map(comment => <Comment key={comment} content={comment} />)}
         </div>
       </article>
     );
