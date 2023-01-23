@@ -6,12 +6,11 @@ interface AvatarProps {
   alt?: string
 }
 
-export function Avatar({ hasBorder = true, src, alt }: AvatarProps) {
+export function Avatar({ hasBorder = true, ...props }: AvatarProps) {
   return (
     <img
+      {...props}
       className={ hasBorder ? styles.avatarWithBorder : styles.avatar }
-      src={ src }
-      alt={ alt }
     />
   );
 }
