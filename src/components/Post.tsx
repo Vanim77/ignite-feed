@@ -24,7 +24,7 @@ interface IPostProps {
 }
 
 export function Post({ author, content, publishedAt }: IPostProps) {
-    const [comments, setComments] = useState(['Que bacana!']);
+    const [comments, setComments] = useState(['Que bacana! 👏']);
     const [newCommentText, setNewCommentText] = useState('');
 
     const publishedDateFormatted = format(
