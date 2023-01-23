@@ -2,11 +2,28 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import { format, formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR'
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 
 import styles from './Post.module.css';
 
-export function Post({ author, content, publishedAt }) {
+interface IAuthor {
+  avatarUrl: string,
+  name: string,
+  role: string
+}
+
+interface IContent {
+  type: string,
+  content: string
+}
+
+interface IPostProps {
+  author: IAuthor,
+  content: IContent[],
+  publishedAt: Date
+}
+
+export function Post({ author, content, publishedAt }: IPostProps) {
     const [comments, setComments] = useState(['Que bacana!']);
     const [newCommentText, setNewCommentText] = useState('');
 
@@ -27,13 +44,13 @@ export function Post({ author, content, publishedAt }) {
       },
     );
 
-    function handleNewCommentChange({ target }) {
+    function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
       // Informa ao método setCustomValidity que não há erros na textarea
-      target.setCustomValidity('');
-      setNewCommentText(target.value);
+      event.target.setCustomValidity('');
+      setNewCommentText(event.target.value);
     }
 
-    function handleNewComment(event) {
+    function handleNewComment(event: FormEvent) {
       event.preventDefault();
 
       setComments([...comments, newCommentText]);
@@ -41,11 +58,11 @@ export function Post({ author, content, publishedAt }) {
       setNewCommentText('');
     }
 
-    function handleNewCommentInvalid(event) {
+    function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
       event.target.setCustomValidity('Esse campo é obrigatório!');
     }
 
-    function deleteComment(commentToDelete) {
+    function deleteComment(commentToDelete: string) {
       const commentsWithoutDeletedOne = comments.filter(comment => {
         return comment !== commentToDelete;
       });
