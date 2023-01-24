@@ -1,5 +1,7 @@
 import { PencilLine } from 'phosphor-react';
 import { Avatar } from './Avatar';
+import coverAvatarImg from '../assets/code.png';
+
 import styles from './Sidebar.module.css';
 
 export function Sidebar() {
@@ -7,7 +9,7 @@ export function Sidebar() {
         <aside className={styles.sidebar}>
             <img
                 className={styles.cover}
-                src="src/assets/code.png"
+                src={coverAvatarImg}
             />
 
             <div className={styles.profile}>
