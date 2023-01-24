@@ -7,7 +7,7 @@ export function Sidebar() {
         <aside className={styles.sidebar}>
             <img
                 className={styles.cover}
-                src="./assets/code.png"
+                src="src/assets/code.png"
             />
 
             <div className={styles.profile}>
