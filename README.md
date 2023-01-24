@@ -2,9 +2,15 @@
 
 Este projeto é uma simulação de feed de redes sociais, utilizando o conceito de SPA, e aplicando funcionalidades como curtir, adicionar, remover comentários, entre outras.
 
-<p>
+<div align="center">
   <img alt="Project photo showing a list of buttons with links." src="./.github/ignitefeed.gif" width="100%" />
-</p>
+</div>
+
+---
+
+# Link :paperclip:
+
+  * [ignite-feed.vercel.app](https://ignite-feed-two-iota.vercel.app)
 
 ---
 
