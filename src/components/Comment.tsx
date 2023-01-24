@@ -5,11 +5,14 @@ import { Avatar } from './Avatar';
 import styles from './Comment.module.css';
 
 interface CommentProps {
+  name: string,
   content: string,
   onDeleteComment: (comment: string) => void;
+  src: string,
+  commentHowLong: string
 }
 
-export function Comment({ content, onDeleteComment }: CommentProps) {
+export function Comment({ name, content, onDeleteComment, src, commentHowLong }: CommentProps) {
   const [likeCount, setLikeCount] = useState(0);
 
   function handleDeleteComment() {
@@ -22,14 +25,14 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
 
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/jakeliny.png" alt="" />
+      <Avatar hasBorder={false} src={ src } alt="" />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Jakeliny Gracielly</strong>
-              <time title="20 de Janeiro às 09:17h" dateTime="2023-01-20 09:17:10">Cerca de 1h atrás</time>
+              <strong>{name}</strong>
+              <time title="20 de Janeiro às 09:17h" dateTime="2023-01-20 09:17:10">{commentHowLong}</time>
             </div>
 
             <button onClick={handleDeleteComment} title="Deletar comentário">

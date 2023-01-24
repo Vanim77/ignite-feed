@@ -113,12 +113,25 @@ export function Post({ author, content, publishedAt }: IPostProps) {
         </form>
 
         <div className={styles.commentList}>
-          {comments.map(comment => 
-            <Comment
-              key={comment}
-              content={comment}
-              onDeleteComment={deleteComment}
-            />
+          {comments.map((comment) => {
+            return comment === "Que bacana! 👏"
+              ? <Comment
+                  name="Jakeliny Gracielly"
+                  src="https://github.com/jakeliny.png"
+                  key={comment}
+                  content={comment}
+                  onDeleteComment={deleteComment}
+                  commentHowLong="Cerca de 1h atrás"
+                />
+              : <Comment
+                  name="Giovanni Nunes"
+                  src="https://github.com/Vanim77.png"
+                  key={comment}
+                  content={comment}
+                  onDeleteComment={deleteComment}
+                  commentHowLong="Agora mesmo"
+                />
+          }
           )}
         </div>
       </article>
