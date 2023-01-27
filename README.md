@@ -3,7 +3,7 @@
 Este projeto é uma simulação de feed de redes sociais, utilizando o conceito de SPA, e aplicando funcionalidades como curtir, adicionar, remover comentários, entre outras.
 
 <div align="center">
-  <img alt="Project photo showing a list of buttons with links." src="./.github/ignitefeed.gif" width="100%" />
+  <img alt="Gif adicionando um comentário, adicionando curtidas em comentários, e deletando comentários." src="./.github/ignitefeed.gif" width="100%" />
 </div>
 
 ---
@@ -42,3 +42,12 @@ Na pasta da aplicação, execute o comando `npm start`.
 Abra o navegador na URL `localhost:3001`
 
 Navegue dentro da aplicação!
+
+---
+
+### Versão mobile 📱
+
+<div align="center">
+  <img alt="Foto de um celular mostrando o projeto" src="./.github/ignitefeed_mobile.png" width="30%" />
+  <img alt="Foto de um celular mostrando o projeto" src="./.github/ignitefeed_mobile2.png" width="30%" />
+</div>
